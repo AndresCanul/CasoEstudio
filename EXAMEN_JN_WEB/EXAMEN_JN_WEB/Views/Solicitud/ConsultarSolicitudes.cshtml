@@ -1,0 +1,31 @@
+﻿@model List<EXAMEN_JN_WEB.Entities.Solicitud>
+
+@{
+    ViewData["Title"] = "ConsultarSolicitudes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="TablaSolicitudes" class="table table-hover">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Ejercicio</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Fecha</td>
+                <td>@item.Monto</td>
+                <td>@item.DescripcionTipoEjercicio</td>
+                <td>@item.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="~/page/vendor/jquery/jquery.min.js"></script>
+<script src="~/page/js/DataTable.js"></script>
